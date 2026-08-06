@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>受注照会 [JYU030] - 販売管理システム SOMS-21</title>
+<link rel="stylesheet" href="css/legacy.css">
+</head>
+<body>
+
+<div class="title-bar">
+  <span>販売管理システム SOMS-21　Ver.3.02</span>
+  <span class="sys-info" id="sys-info"></span>
+</div>
+
+<div class="program-header">
+  <span class="program-id">[JYU030]</span>
+  <span class="screen-title">受注照会</span>
+  <span>メインメニュー ＞ 受注照会</span>
+</div>
+
+<div class="main-area">
+
+  <div class="panel">
+    <div class="panel-title">■ 検索条件</div>
+    <form id="search-form" onsubmit="return false;">
+      <table class="form-table">
+        <tr>
+          <th>受注日</th>
+          <td>
+            <input type="date" id="date-from" name="date-from">
+            〜
+            <input type="date" id="date-to" name="date-to">
+          </td>
+          <th>得意先コード</th>
+          <td><input type="text" id="filter-customer-code" name="filter-customer-code" size="8" maxlength="4" autocomplete="off"></td>
+          <td>
+            <button type="button" id="btn-search">検　索</button>
+            <button type="button" id="btn-search-clear">条件クリア</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">■ 検索結果　<span id="result-count"></span></div>
+    <table class="grid-table" id="orders-table" style="width:100%;">
+      <thead>
+        <tr>
+          <th>受注番号</th>
+          <th>受注日</th>
+          <th>得意先コード</th>
+          <th>得意先名</th>
+          <th>注文書番号</th>
+          <th>納品希望日</th>
+          <th class="num">合計金額（税込）</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="orders-body">
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="fkey-bar">
+  <button type="button" id="btn-back">【F3】メニューへ戻る</button>
+  <button type="button" id="btn-csv">【F8】ＣＳＶ出力</button>
+</div>
+
+<div class="status-bar">
+  <span>条件を指定して【検索】を押してください。無条件の場合は全件表示します。</span>
+  <span class="sunken">JYU030</span>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/db.js"></script>
+<script src="js/orders.js"></script>
+</body>
+</html>

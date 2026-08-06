@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>メインメニュー [MNU001] - 販売管理システム SOMS-21</title>
+<link rel="stylesheet" href="css/legacy.css">
+</head>
+<body>
+
+<div class="title-bar">
+  <span>販売管理システム SOMS-21　Ver.3.02</span>
+  <span class="sys-info" id="sys-info"></span>
+</div>
+
+<div class="program-header">
+  <span class="program-id">[MNU001]</span>
+  <span class="screen-title">メインメニュー</span>
+  <span></span>
+</div>
+
+<div class="main-area">
+  <div class="message-area" style="text-align:center;">
+    <span id="menu-message"></span>
+  </div>
+
+  <table class="menu-table">
+    <tr><td>
+      <button type="button" class="menu-button" id="menu-order-entry">
+        <span class="menu-no">１．</span>受注入力
+      </button>
+    </td></tr>
+    <tr><td>
+      <button type="button" class="menu-button" id="menu-order-list">
+        <span class="menu-no">２．</span>受注照会
+      </button>
+    </td></tr>
+    <tr><td>
+      <button type="button" class="menu-button" id="menu-reset-data" title="登録した受注データを初期状態に戻します">
+        <span class="menu-no">９．</span>データ初期化（デモ用）
+      </button>
+    </td></tr>
+  </table>
+</div>
+
+<div class="fkey-bar">
+  <button type="button" id="fkey-f12">【F12】ログオフ</button>
+</div>
+
+<div class="status-bar">
+  <span>メニュー番号のボタンを押してください。</span>
+  <span class="sunken">MNU001</span>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/db.js"></script>
+<script>
+(function () {
+  Common.requireLogin();
+  Common.renderSysInfo();
+
+  document.getElementById("menu-order-entry").addEventListener("click", function () {
+    location.href = "order.html";
+  });
+  document.getElementById("menu-order-list").addEventListener("click", function () {
+    location.href = "orders.html";
+  });
+  document.getElementById("menu-reset-data").addEventListener("click", function () {
+    if (confirm("受注データを初期状態に戻します。よろしいですか？")) {
+      DB.reset();
+      document.getElementById("menu-message").textContent = "データを初期化しました。";
+    }
+  });
+  document.getElementById("fkey-f12").addEventListener("click", function () {
+    Common.logout();
+  });
+
+  Common.bindFKeys({ F12: "fkey-f12" });
+})();
+</script>
+</body>
+</html>

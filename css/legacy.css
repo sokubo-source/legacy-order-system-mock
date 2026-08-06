@@ -1,0 +1,337 @@
+/* =====================================================
+   販売管理システム SOMS-21  レガシー風スタイル
+   Windows クラシック調 (2000年代前半の業務システムを想定)
+   ===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "MS PGothic", "ＭＳ Ｐゴシック", "MS Gothic", "Osaka", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 12px;
+  background-color: #d4d0c8; /* Windows クラシック グレー */
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- タイトルバー ---------- */
+.title-bar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 3px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+}
+
+.title-bar .sys-info {
+  font-weight: normal;
+  font-size: 11px;
+}
+
+/* ---------- 画面ヘッダ (プログラムID・画面名) ---------- */
+.program-header {
+  background-color: #d4d0c8;
+  border-bottom: 2px groove #ffffff;
+  padding: 4px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.program-header .program-id {
+  font-weight: bold;
+  color: #000080;
+}
+
+.program-header .screen-title {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+/* ---------- メインエリア ---------- */
+.main-area {
+  flex: 1;
+  padding: 10px;
+  overflow: auto;
+}
+
+.panel {
+  background-color: #d4d0c8;
+  border: 2px groove #ffffff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.panel-title {
+  font-weight: bold;
+  color: #000080;
+  border-bottom: 1px solid #808080;
+  margin-bottom: 8px;
+  padding-bottom: 2px;
+}
+
+/* ---------- フォーム ---------- */
+.form-table {
+  border-collapse: collapse;
+}
+
+.form-table th {
+  text-align: right;
+  padding: 3px 8px;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.form-table td {
+  padding: 3px 4px;
+}
+
+.required-mark {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+  font-family: inherit;
+  font-size: 12px;
+  border: 2px inset #ffffff;
+  background-color: #ffffff;
+  padding: 2px 4px;
+  height: 22px;
+}
+
+input[readonly] {
+  background-color: #d4d0c8;
+  border: 2px inset #d4d0c8;
+  color: #000000;
+}
+
+input.num {
+  text-align: right;
+}
+
+input:focus, select:focus {
+  outline: 1px dotted #000000;
+  background-color: #ffffcc; /* フォーカス行の黄色ハイライト(レガシー風) */
+}
+
+input[readonly]:focus {
+  background-color: #d4d0c8;
+}
+
+/* ---------- ボタン ---------- */
+button {
+  font-family: inherit;
+  font-size: 12px;
+  background-color: #d4d0c8;
+  border: 2px outset #ffffff;
+  padding: 3px 14px;
+  cursor: pointer;
+  min-width: 90px;
+  height: 26px;
+}
+
+button:active {
+  border-style: inset;
+}
+
+button:disabled {
+  color: #808080;
+  cursor: default;
+}
+
+/* ---------- 明細テーブル・一覧テーブル ---------- */
+.grid-table {
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border: 2px inset #ffffff;
+}
+
+.grid-table th {
+  background-color: #000080;
+  color: #ffffff;
+  font-weight: normal;
+  border: 1px solid #808080;
+  padding: 3px 6px;
+  white-space: nowrap;
+}
+
+.grid-table td {
+  border: 1px solid #a0a0a0;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.grid-table td.num, .grid-table th.num {
+  text-align: right;
+}
+
+.grid-table td.center {
+  text-align: center;
+}
+
+.grid-table tr:nth-child(even) td {
+  background-color: #f0f0e8;
+}
+
+.grid-table input {
+  border: 1px solid #c0c0c0;
+  height: 20px;
+}
+
+.grid-table input[readonly] {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+
+/* ---------- 合計欄 ---------- */
+.total-table {
+  border-collapse: collapse;
+  margin-top: 6px;
+  margin-left: auto;
+}
+
+.total-table th {
+  background-color: #d4d0c8;
+  border: 1px solid #808080;
+  padding: 3px 10px;
+  font-weight: normal;
+}
+
+.total-table td {
+  border: 1px solid #808080;
+  background-color: #ffffff;
+  padding: 3px 10px;
+  text-align: right;
+  min-width: 110px;
+  font-weight: bold;
+}
+
+/* ---------- メッセージ ---------- */
+.message-area {
+  min-height: 20px;
+  margin-bottom: 8px;
+}
+
+.error-message {
+  color: #ff0000;
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 1px solid #ff0000;
+  padding: 4px 8px;
+}
+
+.complete-message {
+  color: #000080;
+  font-weight: bold;
+  background-color: #ffffff;
+  border: 1px solid #000080;
+  padding: 4px 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ---------- メニュー ---------- */
+.menu-table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.menu-table td {
+  padding: 6px;
+}
+
+.menu-button {
+  width: 260px;
+  height: 40px;
+  font-size: 13px;
+  text-align: left;
+  padding-left: 16px;
+}
+
+.menu-button .menu-no {
+  font-weight: bold;
+  color: #000080;
+  margin-right: 12px;
+}
+
+/* ---------- ファンクションキーバー ---------- */
+.fkey-bar {
+  background-color: #d4d0c8;
+  border-top: 2px groove #ffffff;
+  padding: 4px 8px;
+  display: flex;
+  gap: 6px;
+}
+
+.fkey-bar button {
+  min-width: 110px;
+  font-size: 11px;
+}
+
+/* ---------- ステータスバー ---------- */
+.status-bar {
+  background-color: #d4d0c8;
+  border-top: 1px solid #808080;
+  padding: 2px 8px;
+  font-size: 11px;
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-bar .sunken {
+  border: 1px inset #ffffff;
+  padding: 1px 8px;
+}
+
+/* ---------- ログイン ---------- */
+.login-box {
+  width: 380px;
+  margin: 60px auto;
+  background-color: #d4d0c8;
+  border: 2px outset #ffffff;
+}
+
+.login-box .login-title {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: #ffffff;
+  font-weight: bold;
+  padding: 3px 8px;
+}
+
+.login-box .login-body {
+  padding: 20px;
+}
+
+.login-logo {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000080;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.login-buttons {
+  text-align: center;
+  margin-top: 14px;
+}

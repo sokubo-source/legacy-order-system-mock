@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ログイン [LGN001] - 販売管理システム SOMS-21</title>
+<link rel="stylesheet" href="css/legacy.css">
+</head>
+<body>
+
+<div class="title-bar">
+  <span>販売管理システム SOMS-21　Ver.3.02</span>
+  <span class="sys-info" id="sys-info"></span>
+</div>
+
+<div class="main-area">
+  <div class="login-box">
+    <div class="login-title">ログイン [LGN001]</div>
+    <div class="login-body">
+      <div class="login-logo">販売管理システム<br>SOMS-21</div>
+
+      <div class="message-area">
+        <div id="error-message" class="error-message hidden"></div>
+      </div>
+
+      <form id="login-form" onsubmit="return false;">
+        <table class="form-table" style="margin:0 auto;">
+          <tr>
+            <th>ユーザーＩＤ</th>
+            <td><input type="text" id="user-id" name="user-id" size="16" maxlength="8" autocomplete="off" autofocus></td>
+          </tr>
+          <tr>
+            <th>パスワード</th>
+            <td><input type="password" id="password" name="password" size="16" maxlength="16"></td>
+          </tr>
+        </table>
+        <div class="login-buttons">
+          <button type="button" id="btn-login">ログイン</button>
+          <button type="button" id="btn-clear">クリア</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="status-bar">
+  <span>デモ用アカウント　ユーザーＩＤ: demo ／ パスワード: demo</span>
+  <span class="sunken">SOMS-21</span>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

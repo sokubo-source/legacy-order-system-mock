@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>受注入力 [JYU010] - 販売管理システム SOMS-21</title>
+<link rel="stylesheet" href="css/legacy.css">
+</head>
+<body>
+
+<div class="title-bar">
+  <span>販売管理システム SOMS-21　Ver.3.02</span>
+  <span class="sys-info" id="sys-info"></span>
+</div>
+
+<div class="program-header">
+  <span class="program-id">[JYU010]</span>
+  <span class="screen-title">受注入力</span>
+  <span>メインメニュー ＞ 受注入力</span>
+</div>
+
+<div class="main-area">
+  <div class="message-area">
+    <div id="error-message" class="error-message hidden"></div>
+    <div id="complete-message" class="complete-message hidden">
+      受注を登録しました。　受注番号：<span id="registered-order-no"></span>
+    </div>
+  </div>
+
+  <form id="order-form" onsubmit="return false;">
+
+    <div class="panel">
+      <div class="panel-title">■ 受注ヘッダ</div>
+      <table class="form-table">
+        <tr>
+          <th>受注日<span class="required-mark">＊</span></th>
+          <td><input type="date" id="order-date" name="order-date"></td>
+          <th>注文書番号</th>
+          <td><input type="text" id="po-number" name="po-number" size="20" maxlength="20" autocomplete="off"></td>
+          <th>納品希望日</th>
+          <td><input type="date" id="delivery-date" name="delivery-date"></td>
+        </tr>
+        <tr>
+          <th>得意先コード<span class="required-mark">＊</span></th>
+          <td><input type="text" id="customer-code" name="customer-code" size="8" maxlength="4" autocomplete="off"></td>
+          <th>得意先名</th>
+          <td><input type="text" id="customer-name" name="customer-name" size="34" readonly tabindex="-1"></td>
+          <th>担当者コード</th>
+          <td>
+            <select id="rep-code" name="rep-code">
+              <option value="">(未選択)</option>
+              <option value="E01">E01 営業一課 相田</option>
+              <option value="E02">E02 営業一課 木下</option>
+              <option value="E03">E03 営業二課 浜田</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>備考</th>
+          <td colspan="5"><input type="text" id="note" name="note" size="80" maxlength="60" autocomplete="off"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">■ 受注明細　（商品コードを入力すると商品名・単価が表示されます）</div>
+      <table class="grid-table" id="detail-table">
+        <thead>
+          <tr>
+            <th>行</th>
+            <th>商品コード</th>
+            <th>商品名</th>
+            <th class="num">数量</th>
+            <th>単位</th>
+            <th class="num">単価</th>
+            <th class="num">金額</th>
+          </tr>
+        </thead>
+        <tbody id="detail-body">
+          <!-- 明細行は order.js で生成 (10行) -->
+        </tbody>
+      </table>
+
+      <table class="total-table">
+        <tr>
+          <th>小計</th>
+          <td id="subtotal">0</td>
+          <th>消費税（10%）</th>
+          <td id="tax">0</td>
+          <th>合計金額</th>
+          <td id="total">0</td>
+        </tr>
+      </table>
+    </div>
+
+  </form>
+</div>
+
+<div class="fkey-bar">
+  <button type="button" id="btn-back">【F3】メニューへ戻る</button>
+  <button type="button" id="btn-clear">【F5】画面クリア</button>
+  <button type="button" id="btn-submit">【F9】登　録</button>
+</div>
+
+<div class="status-bar">
+  <span>＊印は必須項目です。登録は【F9】を押してください。</span>
+  <span class="sunken">JYU010</span>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/masters.js"></script>
+<script src="js/db.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

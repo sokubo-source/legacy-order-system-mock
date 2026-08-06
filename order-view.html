@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>受注詳細 [JYU031] - 販売管理システム SOMS-21</title>
+<link rel="stylesheet" href="css/legacy.css">
+</head>
+<body>
+
+<div class="title-bar">
+  <span>販売管理システム SOMS-21　Ver.3.02</span>
+  <span class="sys-info" id="sys-info"></span>
+</div>
+
+<div class="program-header">
+  <span class="program-id">[JYU031]</span>
+  <span class="screen-title">受注詳細</span>
+  <span>メインメニュー ＞ 受注照会 ＞ 受注詳細</span>
+</div>
+
+<div class="main-area">
+  <div class="message-area">
+    <div id="error-message" class="error-message hidden"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">■ 受注ヘッダ</div>
+    <table class="form-table">
+      <tr>
+        <th>受注番号</th>
+        <td><input type="text" id="view-order-no" size="12" readonly></td>
+        <th>受注日</th>
+        <td><input type="text" id="view-order-date" size="12" readonly></td>
+        <th>注文書番号</th>
+        <td><input type="text" id="view-po-number" size="20" readonly></td>
+      </tr>
+      <tr>
+        <th>得意先コード</th>
+        <td><input type="text" id="view-customer-code" size="8" readonly></td>
+        <th>得意先名</th>
+        <td><input type="text" id="view-customer-name" size="34" readonly></td>
+        <th>納品希望日</th>
+        <td><input type="text" id="view-delivery-date" size="12" readonly></td>
+      </tr>
+      <tr>
+        <th>担当者</th>
+        <td><input type="text" id="view-rep" size="20" readonly></td>
+        <th>備考</th>
+        <td colspan="3"><input type="text" id="view-note" size="60" readonly></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">■ 受注明細</div>
+    <table class="grid-table" id="view-detail-table" style="width:100%;">
+      <thead>
+        <tr>
+          <th>行</th>
+          <th>商品コード</th>
+          <th>商品名</th>
+          <th class="num">数量</th>
+          <th>単位</th>
+          <th class="num">単価</th>
+          <th class="num">金額</th>
+        </tr>
+      </thead>
+      <tbody id="view-detail-body">
+      </tbody>
+    </table>
+
+    <table class="total-table">
+      <tr>
+        <th>小計</th>
+        <td id="view-subtotal">0</td>
+        <th>消費税（10%）</th>
+        <td id="view-tax">0</td>
+        <th>合計金額</th>
+        <td id="view-total">0</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="fkey-bar">
+  <button type="button" id="btn-back">【F3】受注照会へ戻る</button>
+</div>
+
+<div class="status-bar">
+  <span>照会のみの画面です。修正はできません。</span>
+  <span class="sunken">JYU031</span>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/db.js"></script>
+<script src="js/order-view.js"></script>
+</body>
+</html>
