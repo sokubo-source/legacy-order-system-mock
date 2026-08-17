@@ -5,25 +5,25 @@
 
 // 得意先マスタ
 var CUSTOMER_MASTER = {
-  "C001": { name: "大空電設株式会社",     kana: "オオゾラデンセツ" },
-  "C002": { name: "青葉金属工業株式会社", kana: "アオバキンゾクコウギョウ" },
-  "C003": { name: "みどり産業株式会社",   kana: "ミドリサンギョウ" },
-  "C004": { name: "株式会社ひかり設備",   kana: "ヒカリセツビ" },
-  "C005": { name: "若葉商事株式会社",     kana: "ワカバショウジ" }
+  "C001": { name: "株式会社さくらテクノロジー",   kana: "サクラテクノロジー" },
+  "C002": { name: "みなとソフトウェア株式会社",   kana: "ミナトソフトウェア" },
+  "C003": { name: "富士データシステム株式会社",   kana: "フジデータシステム" },
+  "C004": { name: "株式会社くらうど情報サービス", kana: "クラウドジョウホウサービス" },
+  "C005": { name: "東京オフィスサプライ株式会社", kana: "トウキョウオフィスサプライ" }
 };
 
 // 商品マスタ
 var ITEM_MASTER = {
-  "P-1001": { name: "LEDシーリングライト 8畳用",      unit: "台", price: 12800 },
-  "P-1002": { name: "LEDシーリングライト 12畳用",     unit: "台", price: 18500 },
-  "P-2001": { name: "VVFケーブル 2.0mm×3芯 100m巻",  unit: "巻", price: 9800 },
-  "P-2002": { name: "VVFケーブル 1.6mm×2芯 100m巻",  unit: "巻", price: 5600 },
-  "P-3001": { name: "埋込スイッチ 片切",              unit: "個", price: 320 },
-  "P-3002": { name: "埋込スイッチ 3路",               unit: "個", price: 480 },
-  "P-3003": { name: "埋込コンセント 2口",             unit: "個", price: 410 },
-  "P-4001": { name: "分電盤 主幹50A 分岐12回路",      unit: "面", price: 34500 },
-  "P-5001": { name: "換気扇 天井埋込型 150mm",        unit: "台", price: 8900 },
-  "P-9001": { name: "配送料",                         unit: "式", price: 1500 }
+  "VPC-BL2-14":  { name: "ノートPC 14型、メモリ16GB",      unit: "台", price: 168000 },
+  "VPC-BL2-15":  { name: "ノートPC 15型、メモリ32GB",      unit: "台", price: 218000 },
+  "ACC-DOCK01":  { name: "USB-Cドッキングステーション",    unit: "台", price: 18000 },
+  "ACC-MOUSE02": { name: "ワイヤレスマウス(黒)",           unit: "個", price: 4000 },
+  "ACC-KB01":    { name: "ワイヤレスキーボード(日本語)",   unit: "個", price: 6800 },
+  "MON-24W":     { name: "液晶モニタ 24型 ワイド",         unit: "台", price: 22800 },
+  "ACC-USB64":   { name: "USBメモリ 64GB",                 unit: "個", price: 1200 },
+  "NW-RT01":     { name: "無線LANルーター",                unit: "台", price: 9800 },
+  "SFT-OFF01":   { name: "オフィスソフト ライセンス",      unit: "本", price: 38000 },
+  "SVC-SHIP":    { name: "配送料",                         unit: "式", price: 1500 }
 };
 
 // 担当者マスタ

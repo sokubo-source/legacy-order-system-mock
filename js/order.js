@@ -13,7 +13,7 @@
     var tr = document.createElement("tr");
     tr.innerHTML =
       '<td class="center">' + ("0" + i).slice(-2) + "</td>" +
-      '<td><input type="text" id="item-code-' + i + '" name="item-code-' + i + '" size="8" maxlength="6" autocomplete="off"></td>' +
+      '<td><input type="text" id="item-code-' + i + '" name="item-code-' + i + '" size="12" maxlength="12" autocomplete="off"></td>' +
       '<td><input type="text" id="item-name-' + i + '" name="item-name-' + i + '" size="34" readonly tabindex="-1"></td>' +
       '<td><input type="text" id="qty-' + i + '" name="qty-' + i + '" size="6" maxlength="6" class="num" autocomplete="off"></td>' +
       '<td><input type="text" id="unit-' + i + '" name="unit-' + i + '" size="3" readonly tabindex="-1"></td>' +
